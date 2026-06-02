@@ -17,9 +17,56 @@ const DB={
 };
 
 // ── AI ────────────────────────────────────────────────────────────
+// ── API Key ───────────────────────────────────────────────────────
+function getKey(){try{return localStorage.getItem('potk_apikey')||'';}catch{return '';}}
+function saveKey(k){try{localStorage.setItem('potk_apikey',k);}catch{}}
+
+function ApiKeyModal({onSave}){
+  const[val,setVal]=useState('');
+  const[show,setShow]=useState(false);
+  const[err,setErr]=useState('');
+  function submit(){
+    if(!val.startsWith('sk-')){setErr('Key must start with sk-');return;}
+    saveKey(val);onSave(val);
+  }
+  return(
+    <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.6)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <div style={{background:M.white,borderRadius:20,padding:'28px',width:420,maxWidth:'90vw',border:`1px solid ${M.sep}`}}>
+        <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:16}}>
+          <div style={{width:38,height:38,borderRadius:11,background:M.tealLight,display:'grid',placeItems:'center',fontSize:20,flexShrink:0}}>🔑</div>
+          <div>
+            <div style={{fontSize:16,fontWeight:700,color:M.ink,letterSpacing:'-.01em'}}>Anthropic API Key</div>
+            <div style={{fontSize:12,color:M.text2,marginTop:1}}>PO Toolkit ажиллахын тулд шаардлагатай</div>
+          </div>
+        </div>
+        <div style={{background:M.bg,borderRadius:12,padding:'10px 14px',fontSize:12,color:M.text2,marginBottom:14,lineHeight:1.7}}>
+          Key авах: <a href="https://console.anthropic.com/settings/keys" target="_blank" style={{color:M.teal,fontWeight:600}}>console.anthropic.com</a> → API Keys → Create Key<br/>
+          <span style={{color:M.text3}}>Key нь зөвхөн таны browser-д хадгалагдана</span>
+        </div>
+        <div style={{position:'relative',marginBottom:6}}>
+          <input type={show?'text':'password'} value={val} onChange={e=>{setVal(e.target.value);setErr('');}} onKeyDown={e=>e.key==='Enter'&&submit()} placeholder="sk-ant-api03-..." style={{...IB,paddingRight:44,fontFamily:'monospace',fontSize:13}} onFocus={onF} onBlur={onB} autoFocus/>
+          <button onClick={()=>setShow(s=>!s)} style={{position:'absolute',right:12,top:'50%',transform:'translateY(-50%)',background:'none',border:'none',cursor:'pointer',color:M.text2,fontSize:16,lineHeight:1}}>{show?'🙈':'👁'}</button>
+        </div>
+        {err&&<div style={{fontSize:12,color:M.red,marginBottom:8}}>⚠ {err}</div>}
+        <button onClick={submit} disabled={!val} style={{width:'100%',border:0,fontFamily:M.font,fontWeight:700,fontSize:14,padding:'12px',borderRadius:999,height:46,background:val?M.teal:M.bg2,color:val?M.white:M.text3,cursor:val?'pointer':'not-allowed',marginTop:6}}>
+          Save & Start →
+        </button>
+      </div>
+    </div>
+  );
+}
+
 async function ai(messages,system,max=2000){
-  const r=await fetch("/api/proxy",{
-    method:"POST",headers:{"Content-Type":"application/json"},
+  const key=getKey();
+  if(!key) throw new Error('NO_KEY');
+  const r=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+      "anthropic-version":"2023-06-01",
+      "x-api-key":key,
+      "anthropic-dangerous-direct-browser-access":"true",
+    },
     body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:max,system,messages}),
   });
   const d=await r.json();
@@ -620,6 +667,9 @@ const GRPS={ai:"AI Assistant",create:"Create",plan:"Plan",tools:"Tools"};
 export default function App(){
   const[pg,setPg]=useState("morning");
   const{log,save}=useHistory();
+  const[apiKey,setApiKey]=useState(()=>getKey());
+
+  if(!apiKey) return <ApiKeyModal onSave={k=>{setApiKey(k);}}/>;
 
   const S={
     story:`Bank PO assistant for M Bank Mongolia. Write user stories: "As a [user], I want [goal], so that [benefit]." Then Acceptance Criteria (Given/When/Then). Include Finacle-specific details if relevant. English only.`,
