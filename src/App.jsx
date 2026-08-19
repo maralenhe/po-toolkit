@@ -67,7 +67,7 @@ async function ai(messages,system,max=2000){
       "x-api-key":key,
       "anthropic-dangerous-direct-browser-access":"true",
     },
-    body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:max,system,messages}),
+    body:JSON.stringify({model:"claude-sonnet-4-5",max_tokens:max,system,messages}),
   });
   const d=await r.json();
   if(!r.ok)throw new Error(d.error?.message||`Error ${r.status}`);
@@ -815,13 +815,16 @@ export default function App(){
           ))}
         </nav>
         <div style={{padding:"8px 10px",borderTop:`1px solid ${M.sep}`}}>
-          <div style={{display:"flex",alignItems:"center",gap:7,padding:"7px 10px",background:M.tealLight,borderRadius:10}}>
+          <div style={{display:"flex",alignItems:"center",gap:7,padding:"7px 10px",background:M.tealLight,borderRadius:10,marginBottom:6}}>
             <span style={{width:7,height:7,borderRadius:"50%",background:M.teal,boxShadow:`0 0 5px ${M.teal}`,flexShrink:0}}/>
-            <div>
+            <div style={{flex:1}}>
               <div style={{fontSize:11,fontWeight:600,color:M.tealDeep}}>Claude Sonnet 4</div>
-              <div style={{fontSize:9.5,color:M.tealDeep,opacity:.7}}>Ready</div>
+              <div style={{fontSize:9.5,color:M.tealDeep,opacity:.7}}>Connected</div>
             </div>
           </div>
+          <button onClick={()=>{localStorage.removeItem('potk_apikey');setApiKey('');}} style={{width:'100%',border:`0.5px solid ${M.sep}`,borderRadius:8,background:'transparent',color:M.text3,fontSize:11,fontWeight:500,padding:'6px 10px',cursor:'pointer',fontFamily:M.font,transition:'all .15s'}} onMouseOver={e=>e.target.style.color=M.text} onMouseOut={e=>e.target.style.color=M.text3}>
+            🔑 Change API Key
+          </button>
         </div>
       </div>
 
