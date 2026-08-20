@@ -667,9 +667,7 @@ function CEOPage({onSave,t,lang}){
           Удирдлага, stakeholder-ийн хэлсэн зүйлийг буулгана уу — ямар ч хэлээр болно. AI бүтэцтэй IT шаардлага болгон хөрвүүлнэ.
         </div>
         <Field label="WHAT DID THEY SAY?" required>
-          <Input value={v.statement||""} onChange={e=>set("statement",e.target.value)} ph={""Merchant-уудад хадгаламжийн бүтээгдэхүүн оруулчих"
-"QPay-аас хурдан болгочих"
-"Нааданаас өмнө гарах ёстой""} rows={4}/>
+          <Input value={v.statement||""} onChange={e=>set("statement",e.target.value)} ph={"Merchant-уудад хадгаламжийн бүтээгдэхүүн оруулчих\nQPay-аас хурдан болгочих\nНааданаас өмнө гарах ёстой"} rows={4}/>
         </Field>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,marginBottom:14}}>
           <div>
@@ -1051,10 +1049,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
           <Card>
             <Field label="SPRINT НЭР"><Input type="in" value={sprintName} onChange={e=>setSprintName(e.target.value)} placeholder="e.g. Sprint 17"/></Field>
             <Field label="TFS EXCEL ӨГӨГДӨЛ (COPY PASTE)">
-              <Input value={raw} onChange={e=>setRaw(e.target.value)} ph={"TFS Raw Data, % эсвэл Backlog Items sheet → Ctrl+A → Ctrl+C → энд Ctrl+V
-
-ID	Title	State	Effort
-108037	Гүйлгээний загвар...	Done	5"} rows={9}/>
+              <Input value={raw} onChange={e=>setRaw(e.target.value)} ph={"TFS Raw Data, % эсвэл Backlog Items sheet → Ctrl+A → Ctrl+C → энд Ctrl+V\n\nID\tTitle\tState\tEffort\n108037\tГүйлгээний загвар..\tDone\t5"} rows={9}/>
             </Field>
             <Field label="ЭСВЭЛ EXCEL ФАЙЛ" mb={8}><FileZone file={file} onFile={setFile} onClear={()=>setFile(null)}/></Field>
             <Btn onClick={analyse} disabled={busy||(!raw.trim()&&!file)} variant="teal" full>
