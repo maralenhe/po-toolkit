@@ -130,11 +130,7 @@ const T = {
     retro:"Sprint Retro",
     sugg:["Demand deposit данс нээх user story бичиж өг","Finacle ACTOPN transaction-ийг тайлбарлаж өг","KYC feature-д TFS work item үүсгэж өг","Банкны PO-ийн best practice юу вэ?"],
     quick:["Demand deposit данс нээх шаардлагууд юу вэ?","Хурлаас гарсан нээлттэй асуудлуудыг жагсаа","Дансны үлдэгдэл шалгах API юу вэ?","Бүх action item болон хариуцагчийг харуул"],
-    init_msg:"Сайн байна уу! Би M Bank-ийн PO туслах AI.
-
-Finacle, TFS, банкны бүтээгдэхүүн, RICE scoring, user story болон бусад чиглэлээр туслана.
-
-Файл хавсаргаж эсвэл ямар ч асуулт асуугаарай.",
+    init_msg:"Сайн байна уу! Би M Bank-ийн PO туслах AI.\n\nFinacle, TFS, банкны бүтээгдэхүүн, RICE scoring, user story болон бусад чиглэлээр туслана.\n\nФайл хавсаргаж эсвэл ямар ч асуулт асуугаарай.",
     grp:{ai:"Туслах",create:"Үүсгэх",plan:"Төлөвлөх",tools:"Хэрэгсэл"},
   },
   en: {
@@ -186,11 +182,7 @@ Finacle, TFS, банкны бүтээгдэхүүн, RICE scoring, user story б
     retro:"Sprint Retro",
     sugg:["Write user story for demand deposit opening","Explain Finacle ACTOPN transaction","Draft TFS work item for KYC feature","Best practices for bank PO?"],
     quick:["Requirements for demand deposit opening?","List open questions from meetings","What API is used for account balance?","Show all action items and owners"],
-    init_msg:"Hi! I'm your M Bank PO Assistant.
-
-I know Finacle, TFS, banking products, RICE scoring, user stories and more.
-
-Attach files or ask anything.",
+    init_msg:"Hi! I'm your M Bank PO Assistant.\n\nI know Finacle, TFS, banking products, RICE scoring, user stories and more.\n\nAttach files or ask anything.",
     grp:{ai:"Assistant",create:"Create",plan:"Plan",tools:"Tools"},
   }
 };
