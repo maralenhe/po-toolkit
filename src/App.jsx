@@ -79,113 +79,6 @@ const IC = {
 
 const NAVIC = {morning:"sun",brain:"brain",chat:"chat",ceo:"target",story:"story",prd:"prd",tfs:"tfs",rice:"chart",sprint:"sprint",dep:"map",mtg:"mtg",tc:"check",review:"video",hist:"history",retro:"chart"};
 
-// ── Language ─────────────────────────────────────────────────────
-const T = {
-  mn: {
-    chat:"AI Чат", brain:"Мэдлэгийн Сан", morning:"Өглөөний мэдээлэл",
-    story:"User Story", prd:"PRD", tfs:"TFS Copilot",
-    ceo:"Stakeholder→IT", rice:"RICE Оноо", sprint:"Sprint Төлөвлөгөө",
-    dep:"Хамаарал", mtg:"Хурлын тэмдэглэл", tc:"Тест кейс",
-    review:"Sprint Review", hist:"Түүх",
-    ai_powered:"AI-д суурилсан",
-    connected:"Холбогдсон",
-    change_key:"🔑 API Key солих",
-    copy:"Хуулах", copied:"Хуулагдлаа ✓",
-    attach_file:"Файл хавсаргах эсвэл дарах",
-    attach_types:"txt · csv · json · pdf · docx · md · xml",
-    file_included:"Файлын агуулга нэмэгдлээ ✓",
-    output_ph:"Үр дүн энд харагдана…",
-    answer_ph:"Баримт бичгээс хариулт…",
-    no_docs:"Баримт бичиг байхгүй байна.",
-    no_hist:"Түүх байхгүй байна.",
-    remove:"Устгах",
-    add_brain:"➕ Мэдлэгийн санд нэмэх",
-    ask_brain:"🔍 Мэдлэгийн санаас хайх",
-    searching:"Хайж байна…",
-    processing:"Боловсруулж байна…",
-    generating:"Үүсгэж байна…",
-    calculating:"Тооцоолж байна…",
-    planning:"Төлөвлөж байна…",
-    continue_btn:"Үргэлжлүүлэх →",
-    save_start:"Хадгалж эхлэх →",
-    export:"⬇ Экспорт",
-    entries:"бичлэг",
-    total:"нийт",
-    ask_ph:"Ямар ч асуулт асуугаарай… (Enter илгээх)",
-    no_docs_warn:"⚠ Баримт бичиг байхгүй — Add Doc tab руу орж BRD, SRS, API баримт нэмнэ үү.",
-    doc_desc:"Ямар ч баримт бичиг upload хийнэ үү. Мэдлэгийн сан асуулт тавихад бүх баримтыг хайж хариулна.",
-    paste_or:"Эсвэл",
-    doc_name_ph:"Жишээ: Demand Deposit BRD v2.1",
-    paste_ph:"BRD, API баримт, хурлын тэмдэглэл, Finacle spec буулгана уу…",
-      ceo_desc:"Удирдлага, stakeholder-ийн хэлсэн зүйлийг буулгана уу. AI бүтэцтэй IT шаардлага болгон хөрвүүлнэ.",
-    tabs_ask:"🔍 Мэдлэгийн сан", tabs_docs:"📚 Баримтууд", tabs_add:"➕ Нэмэх",
-    generate:"✦ Үүсгэх",
-    name_ph:"Жишээ: Марал",
-    sprint_ph:"Жишээ: Sprint 14",
-    yesterday_ph:"Өчигдөр юу болсон бэ? Ямар саад, шийдвэр байсан уу?",
-    gen_brief:"☀️ Өглөөний мэдээлэл үүсгэх",
-    briefing_title:"ӨНӨӨДРИЙН МЭДЭЭЛЭЛ",
-    brain_docs:"Баримт бичиг",
-    history_label:"Түүх",
-    retro:"Sprint Retro",
-    sugg:["Demand deposit данс нээх user story бичиж өг","Finacle ACTOPN transaction-ийг тайлбарлаж өг","KYC feature-д TFS work item үүсгэж өг","Банкны PO-ийн best practice юу вэ?"],
-    quick:["Demand deposit данс нээх шаардлагууд юу вэ?","Хурлаас гарсан нээлттэй асуудлуудыг жагсаа","Дансны үлдэгдэл шалгах API юу вэ?","Бүх action item болон хариуцагчийг харуул"],
-    init_msg:"Сайн байна уу! Би M Bank-ийн PO туслах AI.\n\nFinacle, TFS, банкны бүтээгдэхүүн, RICE scoring, user story болон бусад чиглэлээр туслана.\n\nФайл хавсаргаж эсвэл ямар ч асуулт асуугаарай.",
-    grp:{ai:"Туслах",create:"Үүсгэх",plan:"Төлөвлөх",tools:"Хэрэгсэл"},
-  },
-  en: {
-    chat:"AI Chat", brain:"Knowledge Brain", morning:"Morning Brief",
-    story:"User Story", prd:"PRD", tfs:"TFS Copilot",
-    ceo:"Stakeholder→IT", rice:"RICE Scoring", sprint:"Sprint Planner",
-    dep:"Dependencies", mtg:"Meeting Notes", tc:"Test Cases",
-    review:"Sprint Review", hist:"History",
-    ai_powered:"AI-powered",
-    connected:"Connected",
-    change_key:"🔑 Change API Key",
-    copy:"Copy", copied:"Copied ✓",
-    attach_file:"Attach file or click to browse",
-    attach_types:"txt · csv · json · pdf · docx · md · xml",
-    file_included:"File content included ✓",
-    output_ph:"Output will appear here…",
-    answer_ph:"Answer from your documents…",
-    no_docs:"No documents added yet.",
-    no_hist:"No history yet.",
-    remove:"Remove",
-    add_brain:"➕ Add to Knowledge Brain",
-    ask_brain:"🔍 Ask Brain",
-    searching:"Searching…",
-    processing:"Processing…",
-    generating:"Generating…",
-    calculating:"Calculating…",
-    planning:"Planning…",
-    continue_btn:"Continue →",
-    save_start:"Save & Start →",
-    export:"⬇ Export",
-    entries:"entries",
-    total:"total",
-    ask_ph:"Ямар ч асуулт асуугаарай… (Enter илгээх)",
-    no_docs_warn:"⚠ No documents yet — go to Add Doc tab to upload BRDs, SRS, API docs, meeting notes.",
-    doc_desc:"Upload any document. The Brain searches all docs when you ask questions.",
-    paste_or:"OR",
-    doc_name_ph:"e.g. Demand Deposit BRD v2.1",
-    paste_ph:"Paste BRD, API docs, meeting notes, Finacle specs…",
-    ceo_desc:"Paste what your CEO or stakeholder said — in any language. AI translates to structured IT requirements.",
-    tabs_ask:"🔍 Ask Brain", tabs_docs:"📚 Docs", tabs_add:"➕ Add Doc",
-    generate:"✦ Generate",
-    name_ph:"e.g. Maral",
-    sprint_ph:"e.g. Sprint 14",
-    yesterday_ph:"What happened yesterday? Any blockers or decisions?",
-    gen_brief:"☀️ Generate Morning Briefing",
-    briefing_title:"TODAY'S BRIEFING",
-    brain_docs:"Brain Docs",
-    history_label:"History",
-    retro:"Sprint Retro",
-    sugg:["Write user story for demand deposit opening","Explain Finacle ACTOPN transaction","Draft TFS work item for KYC feature","Best practices for bank PO?"],
-    quick:["Requirements for demand deposit opening?","List open questions from meetings","What API is used for account balance?","Show all action items and owners"],
-    init_msg:"Hi! I'm your M Bank PO Assistant.\n\nI know Finacle, TFS, banking products, RICE scoring, user stories and more.\n\nAttach files or ask anything.",
-    grp:{ai:"Assistant",create:"Create",plan:"Plan",tools:"Tools"},
-  }
-};
 
 // ── AI ────────────────────────────────────────────────────────────
 function getKey(){try{return localStorage.getItem('potk_apikey')||'';}catch{return '';}}
@@ -213,7 +106,7 @@ async function ai(messages, system, max=2000){
 
 // ── File reader ───────────────────────────────────────────────────
 async function readFile(file){
-  if(file.size>3*1024*1024) throw new Error("Max 3MB");
+  if(file.size>3*1024*1024) throw new Error("File too large (max 10MB)");
   const ext = file.name.split(".").pop().toLowerCase();
   const sz = (file.size/1024).toFixed(1);
   const txt = ()=>new Promise((ok,err)=>{const r=new FileReader();r.onload=e=>ok(e.target.result);r.onerror=()=>err();r.readAsText(file,"UTF-8");});
@@ -392,7 +285,7 @@ function FileZone({file,onFile,onClear}){
   );
 }
 
-function OutBox({value,loading,ph="Үр дүн энд харагдана…"}){
+function OutBox({value,loading,ph="Output will appear here…"}){
   return(
     <div style={{background:D.surface2,borderRadius:D.radius,border:`1px solid ${D.border}`,padding:"12px 14px",minHeight:110,fontSize:13,lineHeight:1.75,color:loading?D.text3:D.text,whiteSpace:"pre-wrap"}}>
       {loading?<span style={{display:"flex",alignItems:"center",gap:8,color:D.text2}}><Spinner/> Processing with AI…</span>:(value||<span style={{color:D.text3}}>{ph||"…"}</span>)}
@@ -433,7 +326,7 @@ function ApiKeyModal({onSave, t}){
 }
 
 // ── Morning Briefing ──────────────────────────────────────────────
-function MorningPage({onSave,t,lang}){
+function MorningPage({onSave}){
   const[name,setName]=useState(()=>DB.get("po_name",""));
   const[sprint,setSprint]=useState(()=>DB.get("po_sprint",""));
   const[status,setStatus]=useState(()=>DB.get("po_status",""));
@@ -451,10 +344,8 @@ function MorningPage({onSave,t,lang}){
     setBusy(true);
     try{
       const ctx=brainDocs.slice(0,3).map(d=>`[${d.name}]\n${d.content.slice(0,1500)}`).join("\n\n");
-      const sys=lang==="en"
-        ?`You are an AI Shadow PO for M Bank Mongolia. Generate a concise morning briefing in English. Be direct and actionable.`
-        :`Та M Bank Монголын AI Shadow PO. Өглөөний товч мэдээлэл монгол хэлээр гарга. Тодорхой, хэрэглэж болохуйц байна.`;
-      const p=`${name||"PO"}-д өглөөний мэдээлэл гарга.\nСprint: ${sprint||"тодорхойгүй"}\nӨчигдөр: ${status||"мэдээлэл байхгүй"}\n${ctx?`Контекст:\n${ctx}`:""}\n\nДараах форматаар бичнэ үү:\n## ${greeting}${name?", "+name:""}! ☀️\n\n**Өчигдөр**\n- ...\n\n**Өнөөдрийн гол ажлууд**\n- ...\n\n**Эрсдэл & Саад**\n- ...\n\n**AI Зөвлөмж**\n- ...`;
+      const sys=`You are an AI Shadow PO for M Bank Mongolia. Generate a concise morning briefing in English. Be direct and actionable.`;
+      const p=`Generate morning briefing for ${name||"PO"}.\nSprint: ${sprint||"unknown"}\nYesterday: ${status||"none"}\n${ctx?`Context:\n${ctx}`:""}\n\nFormat:\n## ${greeting}${name?", "+name:""}! ☀️\n\n**Yesterday**\n- ...\n\n**Today's Focus**\n- ...\n\n**Risks & Blockers**\n- ...\n\n**AI Recommendations**\n- ...`;
       const r=await ai([{role:"user",content:p}],sys,800);
       setBrief(r);DB.set("morning_brief",r);
       onSave({tool:"morning",input:`Briefing for ${name}`,output:r});
@@ -505,7 +396,7 @@ function MorningPage({onSave,t,lang}){
 }
 
 // ── Knowledge Brain ───────────────────────────────────────────────
-function BrainPage({onSave,t,lang}){
+function BrainPage({onSave}){
   const[docs,setDocs]=useState(()=>DB.get("brain_docs",[]));
   const[q,setQ]=useState("");const[ans,setAns]=useState("");const[busy,setBusy]=useState(false);
   const[addFile,setAddFile]=useState(null);const[addNote,setAddNote]=useState("");const[addName,setAddName]=useState("");
@@ -522,9 +413,7 @@ function BrainPage({onSave,t,lang}){
     setBusy(true);setAns("");
     try{
       const ctx=docs.map(d=>`### ${d.name}\n${d.content.slice(0,3000)}`).join("\n\n---\n\n");
-      const brainSys=lang==="en"
-        ?`Answer based ONLY on provided documents. Always cite the source document name. Be precise.`
-        :`Зөвхөн оруулсан баримт бичгүүдэд үндэслэн хариулна. Эх сурвалжийн нэрийг заавал дурдана. Монгол хэлээр хариулна.`;
+      const brainSys=`Answer based ONLY on provided documents. Always cite the source document name. Be precise.`;
       const r=await ai([{role:"user",content:`Question: ${q}\n\n${"═".repeat(36)}\n${ctx}\n${"═".repeat(36)}`}],brainSys,2000);
       setAns(r);onSave({tool:"brain",input:q,output:r});
     }catch(e){setAns("Error: "+e.message);}
@@ -585,7 +474,7 @@ function BrainPage({onSave,t,lang}){
 // ── Chat ──────────────────────────────────────────────────────────
 const SUGG=["Demand deposit данс нээх user story бичиж өг","Finacle ACTOPN transaction-ийг тайлбарлаж өг","KYC feature-д TFS work item үүсгэж өг","Банкны PO-ийн best practice юу вэ?","RICE scoring хэрхэн хийдэг вэ?"];
 
-function ChatPage({onSave,t,lang}){
+function ChatPage({onSave}){
   const SYS=`Та M Bank Монголын бүтээгдэхүүний менежерийн туслах AI. Finacle, TFS, дижитал банкинг, user story, RICE, PRD мэднэ. Хэрэглэгч монголоор асуувал монголоор, англиар асуувал англиар хариулна. Товч, практик, хэрэглэж болохуйц байна.`;
   const[msgs,setMsgs]=useState(()=>DB.get("chat_msgs",[{role:"assistant",content:"Hi! I'm your M Bank PO Assistant.\n\nI know Finacle, TFS, banking products, RICE scoring, user stories and more.\n\nAttach files or ask anything."}]));
   const[inp,setInp]=useState("");const[busy,setBusy]=useState(false);const[sugg,setSugg]=useState(true);const[pf,setPf]=useState(null);
@@ -625,7 +514,7 @@ function ChatPage({onSave,t,lang}){
         <div ref={bot}/>
       </div>
       {sugg&&<div style={{padding:"8px 20px",background:D.surface,borderTop:`1px solid ${D.border}`,display:"flex",flexWrap:"wrap",gap:6}}>
-        {(t?t.sugg:SUGG).map(s=><button key={s} onClick={()=>send(s)} style={{background:D.surface2,border:`1px solid ${D.border}`,borderRadius:D.radius,color:D.text2,fontSize:12,padding:"4px 10px",cursor:"pointer",fontFamily:D.font}}>{s}</button>)}
+        {SUGG.map(s=><button key={s} onClick={()=>send(s)} style={{background:D.surface2,border:`1px solid ${D.border}`,borderRadius:D.radius,color:D.text2,fontSize:12,padding:"4px 10px",cursor:"pointer",fontFamily:D.font}}>{s}</button>)}
       </div>}
       <div style={{background:D.surface,borderTop:`1px solid ${D.border}`,padding:"10px 16px 14px"}}>
         {pf&&<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8,padding:"5px 10px",background:D.surface2,borderRadius:D.radiusSm,fontSize:12,border:`1px solid ${D.border}`}}>
@@ -644,10 +533,8 @@ function ChatPage({onSave,t,lang}){
 }
 
 // ── Stakeholder Translator ────────────────────────────────────────
-function CEOPage({onSave,t,lang}){
-  const SYS=lang==="en"
-    ?`Bank PO assistant. Translate vague executive language into structured IT requirements. Output: Business Goal, Features, Epic, User Stories (3-5), Priority, Risks. English only.`
-    :`Банкны PO туслах. Бизнесийн/удирдлагын хэллэгийг бүтэцтэй IT шаардлага болгон хөрвүүлнэ. Гаралт: Бизнесийн зорилго, Feature-үүд, Epic, User Story (3-5), Эрэмбэ, Эрсдэл. Монгол хэлээр бичнэ.`;
+function CEOPage({onSave}){
+  const SYS=`Bank PO assistant. Translate vague executive language into structured IT requirements. Output: Business Goal, Features, Epic, User Stories (3-5), Priority, Risks. English only.`;
   const[v,setV]=useState(()=>DB.get("form_ceo",{}));
   const[out,setOut]=useState("");const[busy,setBusy]=useState(false);
   function set(k,val){const nv={...v,[k]:val};setV(nv);DB.set("form_ceo",nv);}
@@ -688,7 +575,7 @@ function CEOPage({onSave,t,lang}){
 }
 
 // ── Generic Tool ──────────────────────────────────────────────────
-function ToolPage({toolId,fields,sys,build,cta,onSave,t,lang}){
+function ToolPage({toolId,fields,sys,build,cta,onSave}){
   const[v,setV]=useState(()=>{const s=DB.get(`form_${toolId}`,{});const d={};fields.forEach(f=>{if(f.t==="sel"&&!s[f.k])d[f.k]=(DB.get(f.sk,f.opts)||[])[0]||f.opts[0];});return{...d,...s};});
   const[file,setFile]=useState(null);const[out,setOut]=useState("");const[busy,setBusy]=useState(false);
   function set(k,val){const nv={...v,[k]:val};setV(nv);DB.set(`form_${toolId}`,nv);}
@@ -723,7 +610,7 @@ function ToolPage({toolId,fields,sys,build,cta,onSave,t,lang}){
             )}
           </div>
         ))}
-        <Btn onClick={run} disabled={busy} variant="teal">{busy?<><Spinner/> {t?t.processing:"Processing…"}</>:(cta||(t?t.generate:"✦ Generate"))}</Btn>
+        <Btn onClick={run} disabled={busy} variant="teal">{busy?<><Spinner/> "Processing…"</>:(cta||(t?"✦ Generate":"✦ Generate"))}</Btn>
       </Card>
       <Card>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><SectionTitle>OUTPUT</SectionTitle>{out&&<CopyBtn text={out}/>}</div>
@@ -734,7 +621,7 @@ function ToolPage({toolId,fields,sys,build,cta,onSave,t,lang}){
 }
 
 // ── RICE ──────────────────────────────────────────────────────────
-function RicePage({onSave,t,lang}){
+function RicePage({onSave}){
   const[feats,setFeats]=useState(()=>DB.get("rice_feats","Biometric login\nP2P transfer\nLoyalty points\nFX calculator"));
   const[ctx,setCtx]=useState("");const[file,setFile]=useState(null);
   const[busy,setBusy]=useState(false);const[rows,setRows]=useState([]);const[sum,setSum]=useState("");const[err,setErr]=useState("");
@@ -743,10 +630,8 @@ function RicePage({onSave,t,lang}){
     const list=feats.split("\n").filter(f=>f.trim());if(!list.length)return;
     setBusy(true);setRows([]);setSum("");setErr("");
     try{
-      const riceInstr=lang==="en"
-        ?"Bank PO expert. Reply ONLY with valid JSON, rationale in English."
-        :"Банкны PO мэргэжилтэн. Зөвхөн JSON форматаар хариулна, rationale монголоор бичнэ.";
-      const sys=`${riceInstr}\n{"features":[{"name":"","reach":0,"impact":1,"confidence":50,"effort":1,"rationale":"one sentence"}],"summary":"2-3 sentence recommendation"}`;
+      const sys=`Bank PO expert. Reply ONLY with valid JSON, no markdown, rationale in same language as context:
+\n{"features":[{"name":"","reach":0,"impact":1,"confidence":50,"effort":1,"rationale":"one sentence"}],"summary":"2-3 sentence recommendation"}`;
       let p=`RICE for M Bank:\nFeatures: ${list.join(", ")}\n${ctx?"Context: "+ctx:"~500K users, retail mobile app"}`;
       if(file)p+=`\n\nFile (${file.name}):\n${file.content}`;
       const raw=await ai([{role:"user",content:p}],sys);
@@ -897,7 +782,7 @@ function HistoryPage({log}){
 
 // ── Nav ───────────────────────────────────────────────────────────
 // ── Sprint Retro Dashboard ────────────────────────────────────────
-function RetroPage({onSave,t,lang}){
+function RetroPage({onSave}){
   // ── Sprint history list ──
   const[sprints,setSprints]=useState(()=>DB.get("retro_sprints",[]));
   const[activeId,setActiveId]=useState(()=>DB.get("retro_active_id",null));
@@ -1021,7 +906,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
                   </div>
                 </div>
                 <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,marginBottom:10}}>
-                  {[{l:"Нийт task",v:d.totalTasks||0},{l:"Дууссан",v:done},{l:"Effort",v:d.effortTotal||0},{l:"Unplanned",v:d.unplanned||0}].map(s=>(
+                  {[{l:"Нийт task",v:d.totalTasks||0},{l:"Done",v:done},{l:"Effort",v:d.effortTotal||0},{l:"Unplanned",v:d.unplanned||0}].map(s=>(
                     <div key={s.l} style={{background:D.surface2,borderRadius:D.radiusSm,padding:"6px 10px"}}>
                       <div style={{fontSize:10,color:D.text3,marginBottom:2}}>{s.l}</div>
                       <div style={{fontSize:15,fontWeight:600,color:D.text,fontVariantNumeric:"tabular-nums"}}>{s.v}</div>
@@ -1053,7 +938,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
             </Field>
             <Field label="ЭСВЭЛ EXCEL ФАЙЛ" mb={8}><FileZone file={file} onFile={setFile} onClear={()=>setFile(null)}/></Field>
             <Btn onClick={analyse} disabled={busy||(!raw.trim()&&!file)} variant="teal" full>
-              {busy?<><Spinner/> AI шинжилж байна…</>:"📊 Sprint Dashboard үүсгэж хадгалах"}
+              {busy?<><Spinner/> AI шинжилж байна…</>:"📊 Generate & Save Sprint Dashboard"}
             </Btn>
           </Card>
           <div style={{fontSize:12,color:D.text2,lineHeight:1.9,padding:"0 4px"}}>
@@ -1071,7 +956,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
   // ── DETAIL VIEW ───────────────────────────────────────────────
   const sp=activeSprint;
   const d=sp?.data||{};
-  const tabs=[["dashboard","📊 Dashboard"],["items","📋 Work Items"],["retro","💬 Retro"],["notes","📝 Тэмдэглэл"]];
+  const tabs=[["dashboard","📊 Dashboard"],["items","📋 Work Items"],["retro","💬 Retro"],["notes","📝 Notes"]];
 
   return(
     <div style={{height:"100%",display:"flex",flexDirection:"column"}}>
@@ -1113,7 +998,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
         {/* DASHBOARD */}
         {detailTab==="dashboard"&&<>
           <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,marginBottom:14}}>
-            {[{lbl:"Нийт Task",val:d.totalTasks||0,c:D.text},{lbl:"Дууссан",val:(d.done||0)+(d.closed||0),c:D.green},{lbl:"Гүйцэтгэл",val:`${pct((d.done||0)+(d.closed||0),d.totalTasks||1)}%`,c:D.accent},{lbl:"Нийт Effort",val:d.effortTotal||0,c:D.blue}].map(s=>(
+            {[{lbl:"Total Tasks",val:d.totalTasks||0,c:D.text},{lbl:"Done",val:(d.done||0)+(d.closed||0),c:D.green},{lbl:"Completion",val:`${pct((d.done||0)+(d.closed||0),d.totalTasks||1)}%`,c:D.accent},{lbl:"Total Effort",val:d.effortTotal||0,c:D.blue}].map(s=>(
               <div key={s.lbl} style={{background:D.surface,borderRadius:D.radiusLg,border:`1px solid ${D.border}`,padding:"14px 16px",boxShadow:D.shadow}}>
                 <div style={{fontSize:11,fontWeight:500,color:D.text2,marginBottom:4,letterSpacing:".04em",textTransform:"uppercase"}}>{s.lbl}</div>
                 <div style={{fontSize:26,fontWeight:700,color:s.c,lineHeight:1,fontVariantNumeric:"tabular-nums"}}>{s.val}</div>
@@ -1123,7 +1008,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
           <Card>
             <SectionTitle>ГҮЙЦЭТГЭЛИЙН ХУВЬ</SectionTitle>
             <div style={{display:"flex",flexDirection:"column",gap:14}}>
-              {[{lbl:"Task гүйцэтгэл (Done+Closed)",val:(d.done||0)+(d.closed||0),max:d.totalTasks||1,c:D.green},{lbl:"Tested+Done",val:(d.tested||0)+(d.done||0)+(d.closed||0),max:d.totalTasks||1,c:D.accent},...(d.effortTotal>0?[{lbl:"Effort (Prod)",val:d.effortDone||0,max:d.effortTotal,c:D.blue},{lbl:"Effort (Tested)",val:d.effortTested||0,max:d.effortTotal,c:D.teal}]:[])].map(r=>(
+              {[{lbl:"Task completion (Done+Closed)",val:(d.done||0)+(d.closed||0),max:d.totalTasks||1,c:D.green},{lbl:"Tested+Done",val:(d.tested||0)+(d.done||0)+(d.closed||0),max:d.totalTasks||1,c:D.accent},...(d.effortTotal>0?[{lbl:"Effort (Prod)",val:d.effortDone||0,max:d.effortTotal,c:D.blue},{lbl:"Effort (Tested)",val:d.effortTested||0,max:d.effortTotal,c:D.teal}]:[])].map(r=>(
                 <div key={r.lbl}>
                   <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:6}}><span style={{color:D.text2}}>{r.lbl}</span><span style={{fontWeight:700,color:r.c}}>{pct(r.val,r.max)}%</span></div>
                   <PBar value={r.val} max={r.max} color={r.c}/>
@@ -1189,7 +1074,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
         {/* RETRO */}
         {detailTab==="retro"&&(d.retro?
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12}}>
-            {[{key:"start",lbl:"🟢 Start",desc:"Эхлэх ёстой",c:D.green,bg:D.greenBg,bd:"#A8ECC4"},{key:"stop",lbl:"🔴 Stop",desc:"Зогсоох ёстой",c:D.red,bg:D.redBg,bd:"#FECACA"},{key:"continue",lbl:"🔵 Continue",desc:"Үргэлжлүүлэх",c:D.blue,bg:D.blueBg,bd:"#BFDBFE"}].map(col=>(
+            {[{key:"start",lbl:"🟢 Start",desc:"Should start",c:D.green,bg:D.greenBg,bd:"#A8ECC4"},{key:"stop",lbl:"🔴 Stop",desc:"Should stop",c:D.red,bg:D.redBg,bd:"#FECACA"},{key:"continue",lbl:"🔵 Continue",desc:"Keep doing",c:D.blue,bg:D.blueBg,bd:"#BFDBFE"}].map(col=>(
               <div key={col.key} style={{background:D.surface,borderRadius:D.radiusLg,border:`1px solid ${D.border}`,overflow:"hidden",boxShadow:D.shadow}}>
                 <div style={{background:col.bg,padding:"10px 14px",borderBottom:`1px solid ${col.bd}`}}>
                   <div style={{fontSize:13,fontWeight:600,color:col.c}}>{col.lbl}</div>
@@ -1212,7 +1097,7 @@ JSON задла. items дотор зөвхөн effort>0 parent item-уудыг �
         {/* NOTES */}
         {detailTab==="notes"&&<Card mb={0}>
           <SectionTitle>PO ТЭМДЭГЛЭЛ</SectionTitle>
-          <Input value={editNotes} onChange={e=>setEditNotes(e.target.value)} ph="Sprint-тай холбоотой тэмдэглэл, шийдвэр, дараагийн алхам, lessons learned…" rows={8}/>
+          <Input value={editNotes} onChange={e=>setEditNotes(e.target.value)} ph="Notes, decisions, next steps, lessons learned…" rows={8}/>
           <div style={{marginTop:10}}><Btn onClick={saveNotes} variant="teal" sm>💾 Хадгалах</Btn></div>
         </Card>}
       </div>
@@ -1268,7 +1153,7 @@ function SharedRetroView({encoded}){
       <div style={{padding:"24px 28px",maxWidth:1100,margin:"0 auto"}}>
         {tab==="dashboard"&&<>
           <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,marginBottom:14}}>
-            {[{lbl:"Нийт Task",val:data.totalTasks,c:D.text},{lbl:"Дууссан",val:(data.done||0)+(data.closed||0),c:D.green},{lbl:"Гүйцэтгэл",val:`${pct((data.done||0)+(data.closed||0),data.totalTasks)}%`,c:D.accent},{lbl:"Нийт Effort",val:data.effortTotal||0,c:D.blue}].map(s=>(
+            {[{lbl:"Total Tasks",val:data.totalTasks,c:D.text},{lbl:"Done",val:(data.done||0)+(data.closed||0),c:D.green},{lbl:"Completion",val:`${pct((data.done||0)+(data.closed||0),data.totalTasks)}%`,c:D.accent},{lbl:"Total Effort",val:data.effortTotal||0,c:D.blue}].map(s=>(
               <div key={s.lbl} style={{background:D.surface,borderRadius:D.radiusLg,border:`1px solid ${D.border}`,padding:"14px 16px",boxShadow:D.shadow}}>
                 <div style={{fontSize:11,fontWeight:500,color:D.text2,marginBottom:4,letterSpacing:".04em",textTransform:"uppercase"}}>{s.lbl}</div>
                 <div style={{fontSize:26,fontWeight:700,color:s.c,lineHeight:1,fontVariantNumeric:"tabular-nums"}}>{s.val}</div>
@@ -1278,7 +1163,7 @@ function SharedRetroView({encoded}){
           <div style={{background:D.surface,borderRadius:D.radiusLg,border:`1px solid ${D.border}`,padding:"16px 20px",marginBottom:12,boxShadow:D.shadow}}>
             <div style={{fontSize:11,fontWeight:600,color:D.text3,letterSpacing:".07em",textTransform:"uppercase",marginBottom:12}}>ГҮЙЦЭТГЭЛИЙН ХУВЬ</div>
             <div style={{display:"flex",flexDirection:"column",gap:12}}>
-              {[{lbl:"Task гүйцэтгэл (Done+Closed)",val:(data.done||0)+(data.closed||0),max:data.totalTasks,c:D.green},{lbl:"Tested+Done",val:(data.tested||0)+(data.done||0)+(data.closed||0),max:data.totalTasks,c:D.accent},...(data.effortTotal>0?[{lbl:"Effort (Prod)",val:data.effortDone||0,max:data.effortTotal,c:D.blue},{lbl:"Effort (Tested)",val:data.effortTested||0,max:data.effortTotal,c:D.teal}]:[])].map(r=>(
+              {[{lbl:"Task completion (Done+Closed)",val:(data.done||0)+(data.closed||0),max:data.totalTasks,c:D.green},{lbl:"Tested+Done",val:(data.tested||0)+(data.done||0)+(data.closed||0),max:data.totalTasks,c:D.accent},...(data.effortTotal>0?[{lbl:"Effort (Prod)",val:data.effortDone||0,max:data.effortTotal,c:D.blue},{lbl:"Effort (Tested)",val:data.effortTested||0,max:data.effortTotal,c:D.teal}]:[])].map(r=>(
                 <div key={r.lbl}>
                   <div style={{display:"flex",justifyContent:"space-between",fontSize:13,marginBottom:5}}><span style={{color:D.text2}}>{r.lbl}</span><span style={{fontWeight:700,color:r.c}}>{pct(r.val,r.max)}%</span></div>
                   <PBar value={r.val} max={r.max} color={r.c}/>
@@ -1339,7 +1224,7 @@ function SharedRetroView({encoded}){
 
         {tab==="retro"&&data.retro&&(
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12}}>
-            {[{key:"start",lbl:"🟢 Start",desc:"Эхлэх ёстой",c:D.green,bg:D.greenBg,bd:"#A8ECC4"},{key:"stop",lbl:"🔴 Stop",desc:"Зогсоох ёстой",c:D.red,bg:D.redBg,bd:"#FECACA"},{key:"continue",lbl:"🔵 Continue",desc:"Үргэлжлүүлэх",c:D.blue,bg:D.blueBg,bd:"#BFDBFE"}].map(col=>(
+            {[{key:"start",lbl:"🟢 Start",desc:"Should start",c:D.green,bg:D.greenBg,bd:"#A8ECC4"},{key:"stop",lbl:"🔴 Stop",desc:"Should stop",c:D.red,bg:D.redBg,bd:"#FECACA"},{key:"continue",lbl:"🔵 Continue",desc:"Keep doing",c:D.blue,bg:D.blueBg,bd:"#BFDBFE"}].map(col=>(
               <div key={col.key} style={{background:D.surface,borderRadius:D.radiusLg,border:`1px solid ${D.border}`,overflow:"hidden",boxShadow:D.shadow}}>
                 <div style={{background:col.bg,padding:"10px 14px",borderBottom:`1px solid ${col.bd}`}}>
                   <div style={{fontSize:13,fontWeight:600,color:col.c}}>{col.lbl}</div>
@@ -1387,70 +1272,50 @@ export default function App(){
   const[pg,setPg]=useState("morning");
   const{log,save}=useHistory();
   const[apiKey,setApiKey]=useState(()=>getKey());
-  const[lang,setLang]=useState(()=>DB.get("lang","mn"));
-  const t=T[lang]||T.mn;
-  function toggleLang(){const nl=lang==="mn"?"en":"mn";setLang(nl);DB.set("lang",nl);}
-
   // Check if shared retro link
   const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
   const sharedRetro = urlParams.get("retro");
   if(sharedRetro) return <SharedRetroView encoded={sharedRetro}/>;
 
-  if(!apiKey) return <ApiKeyModal onSave={k=>setApiKey(k)} t={T.mn}/>;
+  if(!apiKey) return <ApiKeyModal onSave={k=>setApiKey(k)}/>;
 
   const S={
-    story:lang==="en"
-    ?`Bank PO for M Bank. Write user stories: "As a [user], I want [goal], so that [benefit]." Then Acceptance Criteria (Given/When/Then). Include Finacle context. English only.`
-    :`M Bank Монголын PO туслах. User story бичнэ. Дараа нь Acceptance Criteria (Given/When/Then). Finacle контекст тусгана. Монгол хэлээр бичнэ.`,
-    prd:lang==="en"
-    ?`Bank PO. Write structured PRD: Objective, Target users, Features (MoSCoW), Out of scope, Technical requirements, KPIs, Risks. English only.`
-    :`Банкны PO туслах. Бүтэцтэй PRD бичнэ: Зорилго, Зорилтот хэрэглэгч, Feature-үүд (MoSCoW), Хамрах хүрээнээс гадна, Техникийн шаардлага, KPI, Эрсдэл. Монгол хэлээр бичнэ.`,
-    tfs:lang==="en"
-    ?`TFS expert. Generate work items: Type, Title, Description, Acceptance Criteria, Tags, Priority (1-4), Story Points, Child tasks. English only.`
-    :`TFS мэргэжилтэн. Work item үүсгэнэ: Төрөл, Гарчиг, Тайлбар, Acceptance Criteria, Tag, Эрэмбэ (1-4), Story Point, Дэд даалгавар. Монгол хэлээр бичнэ.`,
-    mtg:lang==="en"
-    ?`Bank PO. Structure meeting notes: Summary, Decisions, Action items (task|owner|deadline), Open questions, Next steps. English only.`
-    :`Банкны PO туслах. Хурлын тэмдэглэл боловсруулна: Дүгнэлт, Шийдвэрүүд, Үйл ажиллагаа, Нээлттэй асуудлууд, Дараагийн алхам. Монгол хэлээр бичнэ.`,
-    tc:lang==="en"
-    ?`Bank QA. Test cases: TC-XXX | Name | Precondition | Steps | Expected result | Priority. Include Finacle errors, security, edge cases. English only.`
-    :`Банкны QA туслах. Test case бичнэ: TC-XXX | Нэр | Урьдчилсан нөхцөл | Алхмууд | Хүлээгдэж буй үр дүн | Эрэмбэ. Finacle алдаа, аюулгүй байдал, edge case оруулна. Монгол хэлээр бичнэ.`,
-    review:lang==="en"
-    ?`Bank PO. Non-technical sprint review script. Business value focus. Opening, demos, metrics, next sprint, Q&A. English only.`
-    :`Банкны PO туслах. Техник бус sprint review script бичнэ. Бизнесийн үнэ цэнийг онцолно. Эхлэл, demo, метрик, дараагийн sprint, Q&A. Монгол хэлээр бичнэ.`,
-    sprint:lang==="en"
-    ?`Sprint planning expert. Given backlog + velocity, create optimal sprint plan with table. Consider dependencies. English only.`
-    :`Sprint төлөвлөлтийн мэргэжилтэн. Backlog + velocity өгөхөд оптимал sprint план хүснэгтэй гаргана. Dependency-г харгалзана. Монгол хэлээр бичнэ.`,
-    dep:lang==="en"
-    ?`Bank architect. Identify dependencies using → arrows. Technical, business, team dependencies + execution order. English only.`
-    :`Банкны архитектор туслах. Story/feature-үүдийн dependency-г → сумаар тодорхойлно. Техник, бизнесийн, багийн dependency + гүйцэтгэх дараалал. Монгол хэлээр бичнэ.`,
+    story:`Bank PO for M Bank Mongolia. Write user stories: "As a [user], I want [goal], so that [benefit]." Then Acceptance Criteria (Given/When/Then). Include Finacle context if relevant. Reply in the same language as the user's input.`,
+    prd:`Bank PO. Write structured PRD: Objective, Target users, Features (MoSCoW), Out of scope, Technical requirements, KPIs, Risks. Reply in the same language as the user's input.`,
+    tfs:`TFS expert. Generate work items: Type, Title, Description, Acceptance Criteria, Tags, Priority (1-4), Story Points, Child tasks. Reply in the same language as the user's input.`,
+    mtg:`Bank PO. Structure meeting notes: Summary, Decisions, Action items (task|owner|deadline), Open questions, Next steps. Reply in the same language as the user's input.`,
+    tc:`Bank QA. Test cases: TC-XXX | Name | Precondition | Steps | Expected result | Priority. Include Finacle errors, security, edge cases. Reply in the same language as the user's input.`,
+    review:`Bank PO. Non-technical sprint review script. Business value focus. Opening, demos, metrics, next sprint, Q&A. Reply in the same language as the user's input.`,
+    sprint:`Sprint planning expert. Given backlog + velocity, create optimal sprint plan with table. Consider dependencies. Reply in the same language as the user's input.`,
+    dep:`Bank architect. Identify dependencies using → arrows. Technical, business, team dependencies + execution order. Reply in the same language as the user's input.`,
   };
 
   const DEFS={
     story:{fields:[
-      {k:"desc",label:"Feature Description",ph:"Жишээ: Мерчант апп-аас Demand Deposit данс нээх боломжтой болох",rows:3},
+      {k:"desc",label:"Feature Description",ph:"e.g. Merchant can open Demand Deposit account from the app",rows:3},
       {k:"user",label:"User Type",t:"sel",sk:"sel_usertype",opts:["Retail customer","Merchant","Bank staff","Corporate customer","System admin","Auditor","Compliance officer"]},
       {k:"domain",label:"Domain",t:"sel",sk:"sel_domain",opts:["Merchant app","Mobile banking","Finacle core","Transfers & payments","Loans","Card management","KYC & Compliance","Demand deposit","Fixed deposit","Reporting"]},
-      {k:"out",label:"Expected Outcome (optional)",ph:"Жишээ: Данс нээлт хурдасна, гараар хийх ажил цөөрнө",rows:2},
+      {k:"out",label:"Expected Outcome (optional)",ph:"e.g. Faster account opening, reduced manual steps",rows:2},
     ],sys:S.story,cta:"✦ Generate User Story",build:v=>{
       if(!(v.desc||"").trim())throw new Error("Please enter a feature description");
       return `Feature: ${v.desc}\nUser: ${v.user||"Retail customer"}\nDomain: ${v.domain||"Merchant app"}\n${v.out?"Outcome: "+v.out:""}\n\nWrite user story + 5–8 acceptance criteria.`;
     }},
     prd:{fields:[
-      {k:"name",label:"Product Name",t:"in",ph:"Жишээ: Мерчант Demand Deposit v1.0"},
+      {k:"name",label:"Product Name",t:"in",ph:"e.g. Merchant Demand Deposit v1.0"},
       {k:"type",label:"Type",t:"sel",sk:"sel_prd_type",opts:["New banking product","New feature","Feature improvement","Regulatory compliance","MVP launch","Technical debt","Integration"]},
-      {k:"brief",label:"Summary",ph:"Энэ feature юу хийх вэ? Яагаад хэрэгтэй вэ? Ямар асуудал шийдэх вэ?",rows:4},
-      {k:"users",label:"Target Users",t:"in",ph:"Жишээ: Мерчант, жижиглэн харилцагч"},
-      {k:"ddl",label:"Timeline",t:"in",ph:"Жишээ: Q3 2025, Sprint 14-16"},
-      {k:"sh",label:"Stakeholders",t:"in",ph:"Жишээ: CTO, Compliance, Finacle баг, UX"},
+      {k:"brief",label:"Summary",ph:"What does it do? Why is it needed? What problem does it solve?",rows:4},
+      {k:"users",label:"Target Users",t:"in",ph:"e.g. Merchants, retail customers"},
+      {k:"ddl",label:"Timeline",t:"in",ph:"e.g. Q3 2025, Sprint 14-16"},
+      {k:"sh",label:"Stakeholders",t:"in",ph:"e.g. CTO, Compliance, Finacle team, UX"},
     ],sys:S.prd,cta:"✦ Generate PRD",build:v=>{
       if(!(v.brief||"").trim())throw new Error("Please enter the summary");
       return `PRD:\nName: ${v.name||"—"}\nType: ${v.type}\nSummary: ${v.brief}\nUsers: ${v.users||"—"}\nTimeline: ${v.ddl||"—"}\nStakeholders: ${v.sh||"—"}`;
     }},
     tfs:{fields:[
       {k:"type",label:"Work Item Type",t:"sel",sk:"sel_tfs_type",opts:["User Story","Bug","Task","Feature","Epic","Test Case","Impediment"]},
-      {k:"req",label:"Requirement / Description",ph:"Жишээ: Мерчант Finacle ACTOPN ашиглан Demand Deposit данс нээх",rows:4},
-      {k:"sprint",label:"Sprint (optional)",t:"in",ph:"Жишээ: Sprint 14"},
-      {k:"tags",label:"Tags (optional)",t:"in",ph:"Жишээ: Finacle, Mobile, KYC"},
+      {k:"req",label:"Requirement / Description",ph:"e.g. Merchant can open Demand Deposit using Finacle ACTOPN",rows:4},
+      {k:"sprint",label:"Sprint (optional)",t:"in",ph:"e.g. Sprint 14"},
+      {k:"tags",label:"Tags (optional)",t:"in",ph:"e.g. Finacle, Mobile, KYC"},
     ],sys:S.tfs,cta:"✦ Generate TFS Work Items",build:v=>{
       if(!(v.req||"").trim())throw new Error("Please enter the requirement");
       const type=v.type||"User Story";
@@ -1463,7 +1328,7 @@ export default function App(){
     mtg:{fields:[
       {k:"type",label:"Meeting Type",t:"sel",sk:"sel_mtg_type",opts:["Sprint planning","Sprint review","Stakeholder meeting","Requirement gathering","Retrospective","Architecture review","Finacle workshop","UAT sign-off","Emergency"]},
       {k:"att",label:"Attendees (optional)",t:"in",ph:"Жишээ: PO, Tech Lead, Finacle BA, QA Lead"},
-      {k:"notes",label:"Meeting Notes (leave blank if attaching file)",ph:"Хурлын тэмдэглэлийг энд буулгана уу…",rows:6},
+      {k:"notes",label:"Meeting Notes (leave blank if attaching file)",ph:"Paste raw meeting notes here…",rows:6},
     ],sys:S.mtg,cta:"✦ Process Notes",build:v=>`Meeting: ${v.type}\n${v.att?"Attendees: "+v.att:""}\n\nNotes:\n${v.notes||"(See attached file)"}\n\nStructure: Summary, Decisions, Action items, Open questions, Next steps.`},
     tc:{fields:[
       {k:"feat",label:"Feature Name",t:"in",ph:"Жишээ: Demand Deposit данс нээлт"},
@@ -1475,27 +1340,27 @@ export default function App(){
       return `Feature: ${v.feat||"—"}\nCriteria:\n${v.crit||"(attached)"}\n\nWrite ${v.cnt||"10 tests"} (${v.kind||"Happy path + Edge cases"}).`;
     }},
     review:{fields:[
-      {k:"name",label:"Sprint Name",t:"in",ph:"Жишээ: Sprint 14 — Demand Deposit"},
+      {k:"name",label:"Sprint Name",t:"in",ph:"e.g. Sprint 14 — Demand Deposit"},
       {k:"aud",label:"Audience",t:"sel",sk:"sel_spr_aud",opts:["C-level (CEO, CTO)","Business stakeholders","Technical team","Board of directors","Compliance team","Cross-functional teams"]},
-      {k:"done",label:"Completed Work (or attach file)",ph:"TFS #1234: Данс нээлтийн маягт\nTFS #1235: Finacle ACTOPN интеграц\nTFS #1236: KYC баталгаажуулалт",rows:5},
-      {k:"next",label:"Next Sprint (optional)",ph:"Санхүүжилтийн урсгал, Хүү тооцоолол…",rows:2},
+      {k:"done",label:"Completed Work (or attach file)",ph:"TFS #1234: Account opening form\nTFS #1235: Finacle ACTOPN integration\nTFS #1236: KYC validation",rows:5},
+      {k:"next",label:"Next Sprint (optional)",ph:"Funding flow, Interest calculation…",rows:2},
     ],sys:S.review,cta:"✦ Generate Script",build:v=>{
       if(!(v.done||"").trim())throw new Error("Please enter completed work or attach a file");
       return `Sprint: ${v.name||"—"}\nAudience: ${v.aud}\nCompleted:\n${v.done}\n${v.next?"Next: "+v.next:""}\n\nWrite 3–5 min demo script.`;
     }},
     sprint:{fields:[
-      {k:"backlog",label:"Backlog (story — story points)",ph:"Данс нээх — 8\nСанхүүжилт — 5\nХүү тооцоолол — 13\nДанс хаах — 5",rows:7},
+      {k:"backlog",label:"Backlog (story — story points)",ph:"Open Account — 8\nFunding — 5\nInterest Calculation — 13\nClose Account — 5",rows:7},
       {k:"velocity",label:"Team Velocity (SP)",t:"in",ph:"30"},
-      {k:"sprints",label:"Number of Sprints",t:"in",ph:"Жишээ: 4"},
-      {k:"team",label:"Team Size",t:"in",ph:"Жишээ: 6 хөгжүүлэгч"},
-      {k:"constraints",label:"Constraints / Notes",ph:"Жишээ: Данс нээх нь Санхүүжилтээс өмнө байна, Q3 релиз",rows:2},
+      {k:"sprints",label:"Number of Sprints",t:"in",ph:"e.g. 4"},
+      {k:"team",label:"Team Size",t:"in",ph:"e.g. 6 devs"},
+      {k:"constraints",label:"Constraints / Notes",ph:"e.g. Open Account before Funding, Q3 release",rows:2},
     ],sys:S.sprint,cta:"✦ Plan Sprints",build:v=>{
       if(!(v.backlog||"").trim())throw new Error("Please enter the backlog");
       return `Sprint Planning:\nVelocity: ${v.velocity||30} SP\n${v.sprints?"Sprints: "+v.sprints:""}\n${v.team?"Team: "+v.team:""}\n\nBacklog:\n${v.backlog}\n${v.constraints?"Constraints: "+v.constraints:""}`;
     }},
     dep:{fields:[
-      {k:"stories",label:"Stories / Features (one per line)",ph:"Харилцагчийн профайл\nKYC баталгаажуулалт\nДанс нээх\nСанхүүжилт\nХүү тооцоолол\nДанс хаах",rows:7},
-      {k:"context",label:"Context (optional)",ph:"Жишээ: Finacle core, demand deposit бүтээгдэхүүн",rows:2},
+      {k:"stories",label:"Stories / Features (one per line)",ph:"Customer Profile\nKYC Verification\nOpen Account\nFunding\nInterest Calculation\nClose Account",rows:7},
+      {k:"context",label:"Context (optional)",ph:"e.g. Finacle core, demand deposit product",rows:2},
     ],sys:S.dep,cta:"✦ Generate Dependency Map",build:v=>{
       if(!(v.stories||"").trim())throw new Error("Please enter stories or features");
       return `Dependency map:\n\n${v.stories}\n\n${v.context?"Context: "+v.context:"Banking mobile app"}`;
@@ -1503,24 +1368,24 @@ export default function App(){
   };
 
   const pages={
-    morning:{t:t.morning,   s:lang==="mn"?"Таны AI Shadow PO":"Your AI Shadow PO",                              c:<MorningPage key={"morning"+lang} onSave={save} t={t} lang={lang}/>},
-    brain:  {t:t.brain,     s:lang==="mn"?"Баримт бичгүүдээсээ асуулт тавих":"Ask questions across your uploaded documents", c:<BrainPage key={"brain"+lang} onSave={save} t={t} lang={lang}/>},
-    chat:   {t:t.chat,      s:lang==="mn"?"Асуулт тавих, файл хавсаргах":"Ask anything, attach files",        c:<ChatPage key={"chat"+lang} onSave={save} t={t} lang={lang}/>},
-    ceo:    {t:t.ceo,       s:lang==="mn"?"Удирдлагын хэллэгийг IT шаардлага болгох":"Translate executive language to IT requirements", c:<CEOPage key={"ceo"+lang} onSave={save} t={t} lang={lang}/>},
-    story:  {t:t.story,     s:lang==="mn"?"Story + acceptance criteria үүсгэх":"Generate stories + acceptance criteria",      c:<ToolPage key={"story"+lang} toolId="story" {...DEFS.story} onSave={save} t={t}/>},
-    prd:    {t:t.prd,       s:lang==="mn"?"Бүтээгдэхүүний шаардлагын баримт":"Product Requirements Document",               c:<ToolPage key={"prd"+lang} toolId="prd" {...DEFS.prd} onSave={save} t={t}/>},
-    tfs:    {t:t.tfs,       s:lang==="mn"?"TFS/Azure DevOps work item үүсгэх":"Generate TFS/Azure DevOps work items",         c:<ToolPage key={"tfs"+lang} toolId="tfs" {...DEFS.tfs} onSave={save} t={t}/>},
-    rice:   {t:t.rice,      s:lang==="mn"?"Feature prioritization тооцоолох":"Feature prioritization with AI",               c:<RicePage key={"rice"+lang} onSave={save} t={t} lang={lang}/>},
-    sprint: {t:t.sprint,    s:lang==="mn"?"Backlog + velocity-г sprint болгон хуваах":"Auto-plan sprints from backlog + velocity", c:<ToolPage key={"sprint"+lang} toolId="sprint" {...DEFS.sprint} onSave={save} t={t}/>},
-    dep:    {t:t.dep,       s:lang==="mn"?"Story болон feature-ийн хамаарлыг харах":"Visualize story and feature dependencies", c:<ToolPage key={"dep"+lang} toolId="dep" {...DEFS.dep} onSave={save} t={t}/>},
-    mtg:    {t:t.mtg,       s:lang==="mn"?"Хурлын тэмдэглэл дүгнэж action item гаргах":"Summarize and extract action items", c:<ToolPage key={"mtg"+lang} toolId="mtg" {...DEFS.mtg} onSave={save} t={t}/>},
-    tc:     {t:t.tc,        s:lang==="mn"?"Acceptance criteria-г тест болгох":"Generate from acceptance criteria",            c:<ToolPage key={"tc"+lang} toolId="tc" {...DEFS.tc} onSave={save} t={t}/>},
-    review: {t:t.review,    s:lang==="mn"?"Техник бус demo script":"Non-technical demo script for stakeholders",             c:<ToolPage key={"review"+lang} toolId="review" {...DEFS.review} onSave={save} t={t}/>},
-    hist:   {t:t.hist,      s:lang==="mn"?"Бүх үр дүн — хэрэгсэл, огноогоор шүүх":"All outputs — filterable by tool, date", c:<HistoryPage log={log} t={t}/>},
-    retro:  {t:"Sprint Retro", s:lang==="mn"?"TFS тайлан · Share link":"Sprint report · Share link", c:<RetroPage key="retro" onSave={save} t={t} lang={lang}/>},
+    morning:{t:"Morning Brief",   s:"Your AI Shadow PO",                              c:<MorningPage key="morning" onSave={save}/>},
+    brain:  {t:"Knowledge Brain",     s:"Ask questions across your uploaded documents", c:<BrainPage key="brain" onSave={save}/>},
+    chat:   {t:"AI Chat",      s:"Ask anything, attach files",        c:<ChatPage key="chat" onSave={save}/>},
+    ceo:    {t:"Stakeholder → IT",       s:"Translate executive language to IT requirements", c:<CEOPage key="ceo" onSave={save}/>},
+    story:  {t:"User Story",     s:"Generate stories + acceptance criteria",      c:<ToolPage key="story" toolId="story" {...DEFS.story} onSave={save}/>},
+    prd:    {t:"PRD",       s:"Product Requirements Document",               c:<ToolPage key="prd" toolId="prd" {...DEFS.prd} onSave={save}/>},
+    tfs:    {t:"TFS Copilot",       s:"Generate TFS/Azure DevOps work items",         c:<ToolPage key="tfs" toolId="tfs" {...DEFS.tfs} onSave={save}/>},
+    rice:   {t:"RICE Scoring",      s:"Feature prioritization with AI",               c:<RicePage key="rice" onSave={save}/>},
+    sprint: {t:"Sprint Planner",    s:"Auto-plan sprints from backlog + velocity", c:<ToolPage key="sprint" toolId="sprint" {...DEFS.sprint} onSave={save}/>},
+    dep:    {t:"Dependencies",       s:"Visualize story and feature dependencies", c:<ToolPage key="dep" toolId="dep" {...DEFS.dep} onSave={save}/>},
+    mtg:    {t:"Meeting Notes",       s:"Summarize and extract action items", c:<ToolPage key="mtg" toolId="mtg" {...DEFS.mtg} onSave={save}/>},
+    tc:     {t:"Test Cases",        s:"Generate from acceptance criteria",            c:<ToolPage key="tc" toolId="tc" {...DEFS.tc} onSave={save}/>},
+    review: {t:"Sprint Review",    s:"Non-technical demo script for stakeholders",             c:<ToolPage key="review" toolId="review" {...DEFS.review} onSave={save}/>},
+    hist:   {t:"History",      s:"All outputs — filterable by tool, date", c:<HistoryPage log={log}/>},
+    retro:  {t:"Sprint Retro", s:"Sprint report · Share link", c:<RetroPage key="retro" onSave={save}/>},
   };
   const cur=pages[pg]||pages.morning;
-  const grouped=Object.entries(GRPS).map(([g,label])=>({label:t.grp[g]||label,items:NAV.filter(n=>n.grp===g)}));
+  const grouped=Object.entries(GRPS).map(([g,label])=>({label:label,items:NAV.filter(n=>n.grp===g)}));
   const brainCount=DB.get("brain_docs",[]).length;
 
   return(
@@ -1562,7 +1427,7 @@ export default function App(){
                   <div key={n.id} onClick={()=>setPg(n.id)} style={{display:"flex",alignItems:"center",gap:9,padding:"6px 9px",borderRadius:D.radius,cursor:"pointer",marginBottom:1,background:on?D.tealBg:"transparent",transition:"all .1s"}}>
                     <span style={{color:on?D.teal:D.text3,flexShrink:0,display:"flex",alignItems:"center"}}>{IC[NAVIC[n.id]]||null}</span>
                     <div style={{flex:1,minWidth:0}}>
-                      <div style={{fontSize:12.5,fontWeight:on?600:400,color:on?D.teal:D.text,lineHeight:1.25,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{t[n.id]||n.l}</div>
+                      <div style={{fontSize:12.5,fontWeight:on?600:400,color:on?D.teal:D.text,lineHeight:1.25,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{n.l}</div>
                       <div style={{fontSize:10.5,color:on?D.teal:D.text3,marginTop:1}}>{n.s}</div>
                     </div>
                     {n.id==="hist"&&log.length>0&&<span style={{fontSize:10,fontWeight:600,background:D.text,color:"#fff",padding:"1px 5px",borderRadius:999,flexShrink:0}}>{log.length}</span>}
@@ -1584,7 +1449,7 @@ export default function App(){
             </div>
           </div>
           <button onClick={()=>{localStorage.removeItem('potk_apikey');setApiKey('');}} style={{width:"100%",border:`1px solid ${D.border}`,borderRadius:D.radiusSm,background:"transparent",color:D.text3,fontSize:11,fontWeight:400,padding:"5px",cursor:"pointer",fontFamily:D.font,transition:"all .15s"}} onMouseOver={e=>{e.target.style.color=D.text;e.target.style.borderColor=D.border2;}} onMouseOut={e=>{e.target.style.color=D.text3;e.target.style.borderColor=D.border;}}>
-            {t.change_key}
+            "🔑 Change API Key"
           </button>
         </div>
       </div>
@@ -1598,14 +1463,9 @@ export default function App(){
             <div style={{fontSize:12,color:D.text2,marginTop:1}}>{cur.s}</div>
           </div>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
-            {/* Language toggle */}
-            <button onClick={toggleLang} style={{display:"flex",alignItems:"center",gap:0,background:D.surface2,border:`1px solid ${D.border}`,borderRadius:999,padding:2,cursor:"pointer",overflow:"hidden"}}>
-              <span style={{padding:"3px 10px",borderRadius:999,fontSize:11,fontWeight:600,background:lang==="mn"?D.text:"transparent",color:lang==="mn"?"#fff":D.text3,transition:"all .15s"}}>МОН</span>
-              <span style={{padding:"3px 10px",borderRadius:999,fontSize:11,fontWeight:600,background:lang==="en"?D.text:"transparent",color:lang==="en"?"#fff":D.text3,transition:"all .15s"}}>ENG</span>
-            </button>
             <div style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:D.text3}}>
               <span style={{width:6,height:6,borderRadius:"50%",background:D.accent,display:"inline-block"}}/>
-              {t.ai_powered}
+              AI-powered
             </div>
           </div>
         </div>
